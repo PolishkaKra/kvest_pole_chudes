@@ -37,14 +37,20 @@ print("Если вы забыли правила, воспользуйтесь �
 spisok_slova = [] #загаданное слово пепревожу с список
 spisok_slova.append(slovo1)
 while True:
+    print(" ")
     print("Введите букву")
     bukva = input() #буква, которую введет игрок
     popitka += 1
-    if len(bukva) > 1 and "/" not in bukva and bukva != slovo1:
-        print("буква введена не верно или слово не угадано")
-        popitka += 1
-        popitka = popitka - 1
-        print("Количество попыток:", popitka)
+    print("Количество попыток:", popitka)
+    if len(bukva) > 1 and "/" not in bukva:
+        if bukva != slovo1:
+            print("буква введена не верно или слово не угадано")
+            popitka += 1
+            popitka = popitka - 1
+            print("Количество попыток:", popitka)
+        else:
+            print("Слово угадано! Вы выиграли! Поздравляю!")
+            break
     elif "/help" in bukva:
         print("Правила игры:")
         print("Игрок вводит букву.")
@@ -59,14 +65,12 @@ while True:
             print("Слово угадано! Вы выиграли! Поздравляю!")
             break
         else:
-            schet_bukv += bukva
-            for i in spisok_slova:
+            schet_bukv.append(bukva)
+            for i in slovo1:
                 if i in schet_bukv:
-                    print(i, end=" ")
+                    print(i, sep="", end="")
                 else:
-                    print("*", end=" ")
-    print("Количество попыток", popitka)
-                
+                    print("*", sep="", end="")
             
 
 
