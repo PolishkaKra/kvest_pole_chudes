@@ -11,6 +11,8 @@
 Квест создан в 2024 году в марте.
 Приятной игры!
 
+<<The miracle show>> quest
+
 Hello! In this quest, you can play the game "words".
 The instructions for the passage are in the quest.
 The quest is conducted in Russian.
